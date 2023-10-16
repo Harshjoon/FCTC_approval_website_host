@@ -7,10 +7,19 @@ var msg_box  = document.getElementById('msg_box')
 var remember_me = document.getElementById('remember_me')
 
 const login_button = document.getElementById("login_btn")
+const approve_cont = document.getElementById("approve_container")
+const login_cont   = document.getElementById("login_container")
+
+const approve_button      = document.getElementById("apprv_btn")
+const dont_approve_button = document.getElementById("dont_apprv_btn") 
 
 let admin_username = "admin"
 let admin_password = "admin"
 
+//url params
+// const urlParams   = new URLSearchParams(window.location.search)
+// const actuator_no = urlParams.get('actuator_no') 
+// console.log(actuator_no)
 //if ( localStorage.check )
 
 function IsRememberMe() {
@@ -51,7 +60,9 @@ login_button.addEventListener('click', () => {
         if ( password.value == admin_password){
             console.log("Password mached")
             msg_box.innerHTML = "Password matched"   
-            window.location.href = "approve_page.html"
+            approve_cont.hidden = false
+            login_cont.hidden   = true
+            //window.location.href = "approve_page.html"
         } 
         else{
             console.log("Password did not match")
@@ -63,3 +74,25 @@ login_button.addEventListener('click', () => {
         msg_box.innerHTML = "Username incorrect"
     }
 })
+
+
+
+// var fso = new ActiveXObject("Scripting.FileSystemObject")
+// var fh  = fso.OpenTextFile("approved.txt",8,false,0)
+// fh.WriteLine("test line")
+// fh.close()
+
+
+// const fs = require('fs')
+// fs.appendFile('approved.txt', 'test data to append', function (err) {
+//     if (err) throw err;
+//     console.log('Saved!');
+//   });
+
+
+var fileReader = new FileReader()
+fileReader.readAsText("./approved.txt")
+
+fileReader.onload = function(){
+    console.log(this.result)
+}

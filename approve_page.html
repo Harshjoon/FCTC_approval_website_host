@@ -16,8 +16,13 @@
 
     <main> 
         <div class="container-2">
-            <button type="button" >Approve</button>
-            <button type="button" >Cancel</button>
+            <label id="warning">Please, login first to continue</label>
+            <button type="button" onclick="window.location.href='index.html'">Login page</button>
+        </div>
+
+        <div class="container-2">
+            <button hidden type="button" >Approve</button>
+            <button hidden type="button" >Cancel</button>
         </div>
     </main>
     <script defer src="approve.js"></script>

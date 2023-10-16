@@ -15,8 +15,8 @@
     </center>    
 
     <main> 
-         
-        <div class="container-2">
+        <!-- username and password -->
+        <div class="container-2" id="login_container">
             <div>
                 <label id="msg_box" for="msg"></label>
             </div>
@@ -34,10 +34,25 @@
                 <input type="checkbox" id="remember_me" checked="checked" name="remember"> Remember me
                 </label>
         </div>
+        
+        <!-- approve data -->
+        <div class="container-2" hidden id="approve_container">
+
+            <div class="container-2">
+                <label >Do you want to approve this actuator report</label>
+                <br>
+                <br>
+                <button type="button" id="apprv_btn" >Approve</button>
+                <button type="button" id="dont_apprv_btn" >Do not approve</button>
+            </div>
+        </div>
+
+        <!-- forget password -->
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
+
     </main> 
     <script defer src="main.js"></script>
 </body>
